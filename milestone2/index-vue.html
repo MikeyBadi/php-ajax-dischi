@@ -20,6 +20,13 @@
 </head>
 <body>
   <div id="app">
+    <select v-model="genChosen"
+    @change="getApi">
+      <option value="">Tutti</option>
+      <option 
+      v-for="genre in genres"
+      :value="genre">{{genre}}</option>
+    </select>
     <div v-for="(disc, index) in discs" ::key="index">
       <img :src="disc.poster" :alt="disc.title">
       <h3>{{disc.title}}</h3>
