@@ -18,6 +18,8 @@ const app = new Vue({
       .then(r => {
         this.discs = r.data
         console.log(r.data);
+
+        
         this.discs.forEach(disc => {
           if(!this.genres.includes(disc.genre)){
             this.genres.push(disc.genre);
